@@ -1,0 +1,229 @@
+.cart_product_container {
+  width: 100%;
+  padding: 0px 50px;
+}
+.cart_product_container .count {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 21px;
+  color: #2a2a72;
+  font-family: "Poppins", sans-serif;
+}
+.cart_container {
+  width: 100%;
+  display: flex;
+  box-shadow: 0 0 10px -4px #9b9a9a;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.cart_img_con {
+  width: 200px;
+  height: 200px;
+}
+.cart_img_con img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+.product_summury {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #706767;
+  padding: 0px 20px;
+  margin-left: 30px;
+  flex-wrap: wrap;
+}
+.product_summury_detail {
+  margin: 10px 0px;
+}
+.cart_product_info {
+  width: 35%;
+}
+.cart_product_info .product_price_detail .product_info_row_second {
+  padding: 0px;
+}
+.cart_wishlist {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  color: #000;
+  text-transform: capitalize;
+}
+.cart_wishlist:hover {
+  color: #5e63f9;
+}
+.product_price_detail {
+  margin: 0px 0px 10px;
+}
+.cart_move_section {
+  display: flex;
+}
+.remove_cart_icon {
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
+  color: rgb(250, 79, 79);
+  transition: all 0.2s;
+}
+.remove:hover {
+  transform: scale(1.1);
+}
+
+.cart_btn_section {
+  display: flex;
+}
+
+.quantity {
+  width: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid;
+  color: #000;
+}
+button.cart_btn {
+  font-size: 20px;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+.cart_btn:hover {
+  font-size: 25px;
+  color: #5e63f9;
+}
+footer {
+  display: block;
+  margin: 10px 0px;
+}
+.cart_price_detail {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.clear_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.btn {
+  width: 190px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #2a2a72;
+  color: #2a2a72;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 992px) {
+  .btn::before {
+    content: "";
+    width: calc(100% + 12px);
+    height: calc(100% - 12px);
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(1);
+  }
+  .btn::after {
+    content: "";
+    width: calc(100% - 12px);
+    height: calc(100% + 12px);
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    transform: scaleX(1);
+  }
+
+  .btn:hover.btn::before {
+    transform: scaleY(0);
+  }
+  .btn:hover.btn::after {
+    transform: scaleX(0);
+  }
+  .clear_btn {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .product_summury {
+    padding: 0px 10px;
+    margin: 0px;
+  }
+  .cart_product_info .product_price_detail .product_info_row_second {
+    width: 90%;
+  }
+  .cart_product_info {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cart_product_container {
+    padding: 0px;
+  }
+  .cart_container {
+    padding: 20px 0px;
+  }
+  .cart_move_section {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+  }
+  .product_summury {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .cart_img_con {
+    width: 157px;
+    height: 184px;
+  }
+  .product_info_row_second {
+    flex-wrap: wrap;
+  }
+  .cart_wishlist {
+    margin-bottom: 10px;
+    font-size: 4vw;
+  }
+  .pname {
+    font-size: 5vw;
+  }
+  .cart_product_info .product_price_detail .product_info_row_second {
+    width: 100%;
+  }
+}

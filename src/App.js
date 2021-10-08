@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import CartContainer from "./components/cart/CartContainer";
+import Navbar from "./components/navbar/Navbar";
+import Products from "./components/Products/Products";
+import ProductDetail from "./components/Products/ProductsDetail";
+import WishlistContainer from "./components/wishlist/WishlistContainer";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Products} />
+        <Route exact path="/cart" component={CartContainer} />
+        <Route exact path="/productdetail" component={ProductDetail} />
+        <Route exact path="/wishlist" component={WishlistContainer} />
+      </Switch>
+    </Router>
   );
-}
-
+};
 export default App;
